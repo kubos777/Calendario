@@ -1,0 +1,11 @@
+{% extends 'calenda/base.html' %}
+
+{% block content %}
+
+<form  method="POST">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Enviar</button>
+</form>
+
+{% endblock %}

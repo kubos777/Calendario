@@ -2,7 +2,18 @@
 
 {% block content %}
 <div class="container">
+  <br>
+<div class="row">
 
+  <div class="col-lg-4">
+    <h1>Calendario de actividades</h1>
+  </div>
+  <div class="col-lg-8">
+    <button type="button" onclick="window.location= '{% url 'agregar' %}'" class="btn btn-success" >Agregar actividad</button>
+  </div>
+
+</div>
+<hr>
   <div class="row">
     {% for entrada in entradas %}
 

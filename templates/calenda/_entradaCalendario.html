@@ -1,0 +1,10 @@
+<div class="entradaCalendario col-lg-4">
+<br>
+  <h2>{{ entrada.nombre }}</h2>
+  <h5>{{ entrada.fechaCreacion }}</h5>
+  <p>
+    {{ entrada.descripcion|truncatechars:100}}
+  </p>
+
+<button onclick="window.location= '{% url 'detalles' pk=entrada.id %}'" class="btn btn-primary ">Ver detalles</button>
+</div>

@@ -1,0 +1,14 @@
+{% extends 'calenda/base.html' %}
+{% block content %}
+<div class="container">
+  <br>
+  <button onclick="window.location= '{% url 'index' %}'" class="btn btn-default">Regresar</button>
+</div>
+<br>
+<div class="container jumbotron">
+  <h1>{{ entrada.nombre }}</h1>
+  <hr>
+  <h3>{{ entrada.fecha }}</h3>
+  <h4>{{ entrada.descripcion }}</h4>
+</div>
+{% endblock %}

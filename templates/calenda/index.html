@@ -1,8 +1,14 @@
 {% extends 'calenda/base.html' %}
 
 {% block content %}
-<div class="container jumbotron">
-  <p>Probando etiquetas de django</p>
+<div class="container">
 
+  <div class="row">
+    {% for entrada in entradas %}
+
+     {% include 'calenda/_entradaCalendario.html' %}
+
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

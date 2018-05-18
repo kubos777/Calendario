@@ -7,4 +7,6 @@
   </p>
 
 <button onclick="window.location= '{% url 'detalles' pk=entrada.id %}'" class="btn btn-primary ">Ver detalles</button>
+<button data-id="{{ entrada.id }} " onclick="eliminarEntrada(this)" class="btn btn-danger ">Eliminar</button>
+
 </div>

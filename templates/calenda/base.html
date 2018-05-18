@@ -18,4 +18,10 @@
   {% endblock %}
 
 </body>
+<script src="{% static 'calenda/js/jquery.min.js' %}"></script>
+<script src="{% static 'calenda/js/app.js' %}"></script>
+<script>
+    var csrf_token = '{{ csrf_token }}'
+
+</script>
 </html>

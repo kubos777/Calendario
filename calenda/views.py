@@ -33,3 +33,10 @@ def agregar(request):
         form = FormularioEntrada()
 
     return render(request,'calenda/agregar.html',{'form':form})
+
+def eliminar(request,pk):
+
+    if request.method == 'DELETE':
+        entrada = get_object_or_404(Entrada,pk=pk)
+        entrada.delete()
+    return HttpResponseRedirect('/')

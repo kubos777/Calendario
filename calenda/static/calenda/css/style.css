@@ -1,3 +1,29 @@
 .entradaCalendario{
   background-color: #eee;
 }
+body, html {
+  width: 100%;
+  display: inline-grid;
+}
+
+.page-center {
+  margin: auto;
+
+  }
+
+.ajustate{
+	margin-top: 75px;
+	margin-left: 300px;
+	margin-right: 300px;	
+}
+
+.center{
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.ajustaLogo{
+
+width: 30%;
+height: auto;
+}

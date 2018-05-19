@@ -1,25 +1,16 @@
 {% extends 'calenda/base.html' %}
 
 {% block content %}
-<div class="container">
-  <br>
-<div class="row">
+<div class="center container">
+    {% load static %}
+<br>
+<br>
+<br>
+  <img src="{% static 'calenda/img/logo.png' %}" alt="Logo de la aplicación" class="ajustaLogo">
+  <h1>Organizapp</h1>
 
-  <div class="col-lg-4">
-    <h1>Calendario de actividades</h1>
-  </div>
-  <div class="col-lg-8">
-    <button type="button" onclick="window.location= '{% url 'agregar' %}'" class="btn btn-success" >Agregar actividad</button>
-  </div>
+  <p>¡Manten tus actividades diarias organizadas en un sólo lugar!</p>
+  <button class="btn btn-success" onclick="window.location='login'">Comenzar ahora</button>
 
-</div>
-<hr>
-  <div class="row">
-    {% for entrada in entradas %}
-
-     {% include 'calenda/_entradaCalendario.html' %}
-
-    {% endfor %}
-  </div>
 </div>
 {% endblock %}

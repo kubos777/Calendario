@@ -1,0 +1,30 @@
+{% extends 'calenda/base.html' %}
+
+{% block content %}
+<div class="container">
+  <br>
+<div class="row">
+
+  <div class="col-lg-4">
+    <h1>Calendario de actividades</h1>
+  {% if  request.user.is_authenticated %}
+  <span>Bienvenido {{ request.user.username }}</span>
+  <a href="/logout" class="danger">Cerrar sesión</a>
+  {% endif %}
+  
+  </div>
+  <div class="col-lg-8">
+    <button type="button" onclick="window.location= '{% url 'agregar' %}'" class="btn btn-success" >Agregar actividad</button>
+  </div>
+
+</div>
+<hr>
+  <div class="row">
+    {% for entrada in entradas %}
+
+     {% include 'calenda/_entradaCalendario.html' %}
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

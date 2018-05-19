@@ -5,8 +5,15 @@ from .forms import FormularioEntrada
 # Create your views here.
 #El render recibe el request, el template y el contexto
 def index(request):
+    
+    #Al agregar el redirect para el login se comenta esto y solamente se redirecciona el index.html
+    #entradas = Entrada.objects.all()
+    #return render(request,'calenda/index.html',{'entradas':entradas})
+    return render(request,'calenda/index.html')
+
+def calendar(request):
     entradas = Entrada.objects.all()
-    return render(request,'calenda/index.html',{'entradas':entradas})
+    return render(request,'calenda/calendar.html',{'entradas':entradas})
 
 def detalles(request,pk):
     entrada = get_object_or_404(Entrada,pk = pk)
@@ -40,3 +47,7 @@ def eliminar(request,pk):
         entrada = get_object_or_404(Entrada,pk=pk)
         entrada.delete()
     return HttpResponseRedirect('/')
+
+def registrate(request):
+
+    return render(request,'registration/registrate.html')

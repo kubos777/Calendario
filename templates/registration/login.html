@@ -1,0 +1,20 @@
+{% extends 'calenda/base.html' %}
+
+{% block content %}
+<div class="page-center container">	
+
+<form method="POST" class="ajustate">
+	<h1 class="center">Iniciar sesión</h1>
+	{% csrf_token %}
+	{% for field in form %}
+		{{ field.errors}}
+		<label>{{ field.label }}</label>
+		<input type="{% if field.label == 'Contraseña' %}password{% else %}input{% endif %}" placeholder="{{ field.label }}" name="{{ field.name }}" class="form-control" />
+	{% endfor %}
+
+	<br>
+	<button type="submit" class="btn btn-primary">Iniciar sesión</button><br><br>
+	<a href="/register">¿Aún no estas registrado? Regístrate</a>
+</form>
+</div>
+{% endblock %}

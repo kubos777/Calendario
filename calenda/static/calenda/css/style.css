@@ -13,8 +13,8 @@ body, html {
 
 .ajustate{
 	margin-top: 75px;
-	margin-left: 300px;
-	margin-right: 300px;	
+	margin-left: 100px;
+	margin-right: 100px;
 }
 
 .center{
@@ -26,4 +26,10 @@ body, html {
 
 width: 30%;
 height: auto;
+}
+
+.salir{
+
+    color: green;
+
 }

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from .models import Entrada
 from .forms import FormularioEntrada
 
@@ -14,19 +15,19 @@ def index(request):
     # return render(request,'calenda/index.html',{'entradas':entradas})
     return render(request, 'calenda/index.html')
 
-
+@login_required
 def calendar(request):
     # entradas = Entrada.objects.all()
     entradas = Entrada.objects.filter(autor=request.user)
 
     return render(request, 'calenda/calendar.html', {'entradas': entradas})
 
-
+@login_required
 def detalles(request, pk):
     entrada = get_object_or_404(Entrada, pk=pk)
     return render(request, 'calenda/detalles.html', {'entrada': entrada})
 
-
+@login_required
 def agregar(request):
     if request.method == 'POST':
         form = FormularioEntrada(request.POST)
@@ -50,7 +51,7 @@ def agregar(request):
 
     return render(request, 'calenda/agregar.html', {'form': form})
 
-
+@login_required
 def eliminar(request, pk):
     if request.method == 'DELETE':
         entrada = get_object_or_404(Entrada, pk=pk)

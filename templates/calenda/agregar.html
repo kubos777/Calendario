@@ -1,11 +1,28 @@
 {% extends 'calenda/base.html' %}
 
 {% block content %}
-
-<form  method="POST">
+<div class="container">
+<form  method="POST" class="form-control">
   {% csrf_token %}
-  {{ form }}
-  <button type="submit">Enviar</button>
+  <div class="form-control" id="nombre" placeholder="Nombre">
+	<label for="nombre">Nombre: </label>
+  {{ form.nombre}}
+  </div>
+  <br>
+  <div class="form-control"  type="date" id="fecha" >
+  <label for="fecha">Fecha: </label>
+  {{ form.fecha }}
+  </div>
+  <br>
+  <div class="form-control"  id="descrip">
+  	<label for="descript">Descripción: </label>
+
+  {{ form.descripcion}}
+  </div>
+  <br>
+  <button type="submit" class="btn btn-success">Agregar actividad</button>
+	<a href="/calendar" class="btn btn-warning"> Cancelar</a>
 </form>
 
+</div>
 {% endblock %}

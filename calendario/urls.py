@@ -12,6 +12,7 @@ urlpatterns = [
     path('entrada/<int:pk>',views.detalles,name='detalles'),
     path('entrada/agregar',views.agregar,name='agregar'),
     path('entrada/eliminar/<int:pk>',views.eliminar,name='eliminar'),
+    path('prebes/37/tarea',views.tarea,name="tarea"),
     path('admin/', admin.site.urls),
 ]
 

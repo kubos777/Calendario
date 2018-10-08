@@ -58,7 +58,6 @@ def eliminar(request, pk):
         entrada.delete()
     return HttpResponseRedirect('/')
 
-
 def registrate(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -74,3 +73,6 @@ def registrate(request):
         form = UserCreationForm()
 
     return render(request, 'registration/registrate.html', {'form': form})
+
+def tarea(request):
+    return render(request,'prebes/tarea.html')

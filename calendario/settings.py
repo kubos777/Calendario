@@ -25,7 +25,7 @@ SECRET_KEY = 'g699^00xq_r3oqwdir-gshm_b+a-!2j)ayuly^7*&v5abq89(o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['kubos777.pythonanywhere.com','localhost','127.0.0.1']
 
 LOGIN_URL = '/login'
 

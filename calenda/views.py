@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Entrada
 from .forms import FormularioEntrada
 
@@ -76,3 +77,22 @@ def registrate(request):
 
 def tarea(request):
     return render(request,'prebes/tarea.html')
+
+def loginWE(request):
+
+    if request.method == 'POST':
+        form = AuthenticationForm(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('calendar')
+        else:
+            messages.error(request, 'Nombre de usuario o contraseña invalidos')
+            return redirect('login')
+
+    else:
+        form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
